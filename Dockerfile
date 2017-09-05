@@ -5,7 +5,7 @@ ENV SERVERNAME pypi.corp.com
 
 RUN apt-get update && apt-get install -y nginx augeas-tools supervisor
 
-COPY files/pypi.conf /etc/nginx/sites-available/pypi.conf
+COPY files/install/pypi.conf /etc/nginx/sites-available/pypi.conf
 RUN mkdir /install /certs
 COPY files/install /install
 COPY files/supervisord /etc/supervisor
