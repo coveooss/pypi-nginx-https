@@ -9,11 +9,11 @@ COPY files/install/pypi.conf /etc/nginx/sites-available/pypi.conf
 RUN mkdir /install /certs
 COPY files/install /install
 COPY files/supervisord /etc/supervisor
-RUN chmod +x /files/entrypoint.sh
+RUN chmod +x /install/entrypoint.sh
 
 EXPOSE 443
 
-ENTRYPOINT ["/files/entrypoint.sh"]
+ENTRYPOINT ["/install/entrypoint.sh"]
 CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
 
 
