@@ -7,7 +7,7 @@ This docker will setup an pypi server behind an https proxy served by nginx.
 You have to configure the SERVERNAME env variable to match your domain name.
 
 ```bash
-docker create -name pypi -e SERVERNAME=test.domain.com quay.io/coveo/pypi-https
+docker create -name pypi -e SERVERNAME=test.domain.com coveo/pypi-nginx-https
 ```
 
 ### Certificates
