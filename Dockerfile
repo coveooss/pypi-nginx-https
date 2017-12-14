@@ -3,7 +3,7 @@ MAINTAINER Coveo
 
 ENV SERVERNAME pypi.corp.com
 
-RUN apt-get update && apt-get install -y nginx augeas-tools supervisor
+RUN apt-get update && apt-get install -y nginx augeas-tools supervisor && apt-get upgrade -y
 
 COPY files/install/pypi.conf /etc/nginx/sites-available/pypi.conf
 RUN ln -s /etc/nginx/sites-available/pypi.conf /etc/nginx/sites-enabled/ && rm /etc/nginx/sites-enabled/default
